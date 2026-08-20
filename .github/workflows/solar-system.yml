@@ -86,3 +86,5 @@ jobs:
             context: .
             push: true
             tags: 'ghcr.io/pavithra-mns/solar-system:${{ github.sha }}' 
+
+            
