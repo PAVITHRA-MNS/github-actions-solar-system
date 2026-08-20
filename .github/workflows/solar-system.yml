@@ -16,14 +16,16 @@ jobs:
     unit-testing:
         name: Unit Testing
         runs-on: ubuntu-latest
+        container:
+          image: 'node:20'
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v7
 
-        - name: Setup NodeJS Version
-          uses: actions/setup-node@v7
-          with:
-            node-version: 20
+        # - name: Setup NodeJS Version
+        #   uses: actions/setup-node@v7
+        #   with:
+        #     node-version: 20
     
         - name: Cache Dependencies
           uses: actions/cache@v6
@@ -87,4 +89,4 @@ jobs:
             push: true
             tags: 'ghcr.io/pavithra-mns/solar-system:${{ github.sha }}' 
 
-            
+
