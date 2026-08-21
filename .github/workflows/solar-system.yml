@@ -96,3 +96,5 @@ jobs:
           echo "kubectl returned $?"
           kubectl -n default get pod
           sleep 10
+    - name: confirm pod status
+      run: kubectl get pods -n default  
