@@ -82,6 +82,13 @@ jobs:
     steps:
     - name: install cluster
       uses: helm/kind-action@v1
+    - name: Debug cluster
+      run: |
+        kubectl get nodes -o wide
+        kubectl get pods -A
+        kubectl get svc -A
+        kubectl get ingressclass
+        kubectl get ingress -A
     - name: kubectl cmds
       run: |
         sleep 60
