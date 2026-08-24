@@ -98,8 +98,7 @@ jobs:
           kubectl -n default get pod
           sleep 10
     - name: confirm pod status
-      run: kubectl get pods -n default  
-      sleep 20
+      run: kubectl get pods -n default;sleep 20
     - name: Debug cluster
       run: |
         kubectl get nodes -o wide
